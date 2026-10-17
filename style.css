@@ -41,6 +41,20 @@ button, input, select {
     background-color: var(--whiter-bg-color);
 }
 
+input:focus, select:focus {
+    outline: .1rem solid var(--location-btn-background);
+}
+
+button:active {
+    transform: scale(.9);
+    transition: transform 100ms ease-in;
+}
+
+button {
+    transform: scale(1);
+    transition: transform 100ms ease-in;
+}
+
 h1 {
     font-size: 2rem;
     
@@ -140,17 +154,28 @@ nav {
 
 
 .highlight {
-    background-color: var(--sug-box-highlight);
+    background-color: var(--location-btn-background);
+}
+
+.highlight:hover {
+    color: white;
 }
 
 .suggestions-box {
     position: absolute;
+    border-radius:  var(--border-radius);
     top: 4.5rem;
-    background-color: rgb(254, 192, 192);
-    width: 17rem;
+    background-color: var(--whiter-bg-color);
+    width: auto;
     max-height: 25rem;
     overflow-y: auto;
     z-index: 2;
+}
+
+.suggestions {
+    padding: .4rem;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 /* ========== Middle Section =========== */

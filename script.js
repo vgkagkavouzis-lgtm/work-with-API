@@ -383,17 +383,23 @@ input.addEventListener('input', () => {
                 
                 
                 // click event for select
-                div.addEventListener('click', () => {
+                div.addEventListener('click', (e) => {
                     input.value = item; // update searchBar (city or country)
                     updateText(item);
                     
                     const divs = document.querySelectorAll('.suggestions'); //clear all divs
-                    divs.forEach(div => div.remove())
+                    divs.forEach(div => div.remove());
                 })
             }
         })
     } else {
         output.textContent = 'Server error!'
+    }
+})
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.suggestions')) {
+        suggestionsBox.replaceChildren();
     }
 })
     
