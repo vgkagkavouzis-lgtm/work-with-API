@@ -180,6 +180,13 @@ btn12h.addEventListener('click', () => {
     getTime();
 })
 
+// Night mode
+const nightModeBtn = document.getElementById('day-night-toggle');
+
+
+nightModeBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-mode');
+})
 
 // =========Local Storage==========
 

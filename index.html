@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,10 @@
             <button class="btn">12h</button>
         </div>
         <div id="toggleNightMode">
-            <button class="btn">Day/Night Mode</button>
+            <button class="btn" id="day-night-toggle">
+                <img src="./icons/dark_mode_light.svg" alt="dark mode">
+                <img src="./icons/light_mode.svg" alt="light mode">
+            </button>
         </div>
         <!-- <button class="night-mode"></button> -->
     </nav>
@@ -34,14 +37,14 @@
         <div class="input">
             <form action="" id="main-input-form">
                 <label for="">Find a city  </label> 
-                <input type="text" class="inputBox" placeholder="Search city / country" autocomplete="off" id="searchBar">
+                <input type="text" class="" placeholder="Search city / country" autocomplete="off" id="searchBar">
                 <div class="suggestions-box">
                     <!-- <div class="suggestions highlight">sdfsdfsdf</div> -->
                 </div>    
             </form> 
             <div id="main-select-input">
                 <label for="timeZoneSelect">Or choose a timezone</label>
-                <select id="timeZoneSelect" class="inputBox">
+                <select id="timeZoneSelect" class="">
                     <option value="Choose a time-zone">Choose a time-zone</option>
                 </select>
             </div>
@@ -95,16 +98,16 @@
                 <div id="converter-date-time-container">
                     <div id="converter-date-container">
                         <label for="convertFromDate">Date</label>
-                        <input class="inputBox" id="convertFromDate" type="date" >
+                        <input class="input-converter" id="convertFromDate" type="date" >
                     </div>
                     <div id="converter-date-container">
                         <label for="convertFromTime">Time</label>
-                        <input class="inputBox" id="convertFromTime" type="time">
+                        <input class="input-converter" id="convertFromTime" type="time">
                     </div>
                 </div>
                 <div id="converter-time-to-zone-container">
                     <label for="convertToTimezone">To</label>
-                        <select class="inputBox" id="convertToTimezone" >
+                        <select class="input-converter" id="convertToTimezone" >
                             <option value="Timezone">Timezone</option>
                         </select>
                 </div>

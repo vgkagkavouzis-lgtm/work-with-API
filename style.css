@@ -8,16 +8,59 @@
     --border: .09rem solid black;
     --border-radius: .4rem;
 
-    --sug-box-highlight: rgb(124, 61, 118);
-    --sug-box-background: rgb(249, 189, 243);
-    
-    --normal-color: ;
-    --faded-color: ;
+
+    /* colors Day-mode */
+    --font-color: black;
     --location-btn-background: rgb(66,91,154);
 
-    --faded-bg-color: rgb(213, 216, 255);
-    --whiter-bg-color: rgb(240, 241, 255);
+    --faded-bg-color: rgb(221, 223, 255);
+    --whiter-bg-color: rgb(242, 243, 255);
 }
+
+
+
+/* ====== Night Mode ========= */
+:root.dark-mode {
+    --border: .09rem solid rgb(66,91,154);
+
+    --font-color: rgb(221, 223, 255);
+    --location-btn-background: rgb(66,91,154);
+
+    --faded-bg-color: rgb(18, 16, 36);
+    --whiter-bg-color: rgb(28, 30, 59);
+    --yellow-color: #EAC452;
+}
+#toggleNightMode {
+    display: flex;
+}
+
+#day-night-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--location-btn-background);
+    
+}
+
+#day-night-toggle img:last-child {
+    display: none;
+}
+/* #day-night-toggle img:first-child {
+    color: ;
+} */
+
+.dark-mode #day-night-toggle img:first-child {
+    display: none;
+}
+
+.dark-mode #day-night-toggle img:last-child {
+    display: block;
+}
+
+/* ====== Basics / Typography ======== */
 
 body {
     display: flex;
@@ -30,6 +73,7 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     background-color: var(--faded-bg-color);
+    color: var(--font-color);
 }
 
 button, input, select {
@@ -39,6 +83,8 @@ button, input, select {
     padding: .6rem;
     background-color: transparent;
     background-color: var(--whiter-bg-color);
+        color: var(--font-color);
+
 }
 
 input:focus, select:focus {
@@ -53,6 +99,8 @@ button:active {
 button {
     transform: scale(1);
     transition: transform 100ms ease-in;
+        color: var(--font-color);
+
 }
 
 h1 {
@@ -103,7 +151,10 @@ h1, h3, h5, h6, p {
 
 nav {
     display: flex;
-    
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+
 }
 
 /* ==========Header============ */
@@ -249,7 +300,10 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     margin: 1rem 0;
+    border-bottom: var(--border);
+    padding-bottom: 1rem;
 }
 
 .saved-zones-container {
@@ -262,12 +316,22 @@ nav {
     flex-direction: column;
 }
 
+.saved-time {
+    position: absolute;
+    left: 9rem;
+    height: 50%;
+    transform: translateY(-55%);
+}
+
 .saved-period {
     font-size: .6rem;
+    position: absolute;
+    left: 14.3rem;
 }
 
 .removeBtn {
     padding: .3rem .6rem;
+    color: var(--font-color);
 }
 
 
@@ -286,7 +350,12 @@ nav {
     border-radius: var(--border-radius);
     padding: 1rem;
     background-color: var(--whiter-bg-color);
+    height: 27rem;
 } 
+
+/* .input-converter {
+    background-color: var(--faded-bg-color);
+} */
 
 #converter-form, #converter-date-container, #converter-date-container, #converter-time-from-zone-container, #converter-time-to-zone-container {
     display: flex;
